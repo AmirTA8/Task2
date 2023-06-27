@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // Exercice 1
+
+    // const persons = [ 
+    // { name : "MONCEF" , age: 13} , 
+    // { name : "BAHIJA" , age: 23} , 
+    // { name : "ALA" , age: 18} , 
+    // ]; 
+
+    // const newPersons = persons.map(item=> {
+    //     const container = {};
+
+    //     container.name = item.name;
+    //     container.age = item.age;
+    //     if (item.age <18) {
+    //         container.statut = "Mineur";
+    //     }
+    //     else{
+    //         container.statut = "Majeur";
+    //     }
+    //     return container;
+    // })
+
+    // console.log(newPersons)
+
+
+
+    // Exercice 2
+
+    // const str1 = 'ahmed&ferah-moez&saadi-fadhel&gadihi'; 
+
+    // const names = str1.split(/[&-]+/);
+
+    // let nameOne = names.slice(0,2)
+
+    // let nameTwo = names.slice(2,4)
+
+    // let nameThree = names.slice(4)
+
+    // const newNames = []
+    // newNames.push(nameOne)
+    // newNames.push(nameTwo)
+    // newNames.push(nameThree)
+
+
+    // const fullName = newNames.map((element) => {
+
+    //     const container = {};
+
+    //     container.firstName = element[0]
+    //     container.lastName = element[1]
+
+
+    //     return container;   
+
+    //      }
+
+    //     )
+    //     console.log(fullName)
+
+
+
+
+
+
+
+    // Exercice 3
+
+    // const users = [
+    //     { name: "sarah", comment: "j'aime ce poste <3" },
+    //     { name: "monya", comment: "le poste est null :( " },
+    //     { name: "carlos", comment: "salut l'algérie" }]
+
+
+
+    // function MoodDetect(liste) {
+    //     newList = liste.map((element) => {
+
+    //         const container = {};
+
+    //         if (element.comment.includes('<3')) {
+    //             container.name = element.name
+    //             container.etat = 'heureux'
+
+    //         }
+    //         else if (element.comment.includes(':(')) {
+    //             container.name = element.name
+    //             container.etat = 'triste'
+    //         }
+    //         else {
+    //             container.name = element.name
+    //             container.etat = 'neutre'
+    //         }
+
+    //         return container
+
+    //     }
+
+    //     )
+    //     console.log(newList)
+    // }
+    // MoodDetect(users)
+
+
+
+
+
+    // Exercice 4
+
+    const etudiants = [
+        { name: "sarah", note: undefined },
+        { name: "monya", note: 7 },
+        { name: "carlos", note: 13 },
+        { name: "fadhel", note: 18 },
+    ]
+
+    let notes = []
+    let somme = 0
+
+    function FailedStudent(liste) {
+
+        mentionEtud = liste.map((Element) => {
+
+            const container = {};
+
+            if (typeof Element.note == 'number') {
+
+                notes.push(Element.note)
+                somme += Element.note
+
+                container.name = Element.name;
+                container.note = Element.note;
+
+                if (Element.note > (somme / notes.length)) {
+                container.mention = 'bien'
+            }
+            else {
+                container.mention = 'passable'
+            }
+            }
+
+            else {
+                // Element.delete()
+            }
+
+
+            
+
+            return container
+
+
+        }
+
+        )
+        console.log(mentionEtud)
+    }
+    FailedStudent(etudiants)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
